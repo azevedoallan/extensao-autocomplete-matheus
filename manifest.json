@@ -1,0 +1,41 @@
+{
+    "manifest_version": 3,
+    "version": "0.0.1",
+    "name": "StartStudio AutoComplete",
+    "description": "Autocomplete de campos no pedido de áudio.",
+    "author": "Allan Azevedo",
+    "action": {
+      "default_icon": {
+        "16": "logo.png",
+        "24": "logo.png",
+        "32": "logo.png",
+        "48": "logo.png",
+        "128": "logo.png"
+      },
+      "default_title": "StartStudio Autocomplete",
+      "default_popup": "index.html"
+    },
+    "icons": {
+      "16": "logo.png",
+      "24": "logo.png",
+      "32": "logo.png",
+      "48": "logo.png",
+      "128": "logo.png"
+    },
+    "permissions": [
+        "activeTab",
+        "scripting"
+    ],
+    "content_scripts": [
+        {
+          "js": [
+            "content.js"
+          ],
+          "matches": [
+            "http://startstudio.com.br/*",
+            "http://www.startstudio.com.br/*"
+          ],
+          "run_at": "document_start"
+        }
+    ]
+}
